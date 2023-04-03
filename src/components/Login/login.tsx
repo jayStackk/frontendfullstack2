@@ -1,10 +1,23 @@
 import React from 'react';
 import './login.css';
 import {  Form, NavLink} from 'react-bootstrap';
-import background from "../assets/jiujitsu.png";
+import SignUp from '../signup/SignUp';
+// import background from "../assets/jiujitsu.png";
+const background = require("../assets/jiujitsu.png")
+// declare module './assets/jiujitsu.png';
 
 function Login() {
+
+  const showSignUp = () => {
+    if(window.location.pathname === "/login"){
+      return <SignUp/>
+
+
+    }
+
+  } 
     return (
+
 
     // <Container className='form2'>
 
@@ -40,7 +53,7 @@ function Login() {
         </div>
 
         <div className='form-group'>
-          <button type='submit' className='btn-pri'>Login</button>
+          <button onClick={showSignUp} type='submit' className='btn-pri'>Login</button>
         </div>
         </Form>
       
